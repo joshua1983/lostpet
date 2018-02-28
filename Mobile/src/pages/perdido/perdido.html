@@ -1,0 +1,40 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Reportar mascota perdida
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Describe a tu mascota:</ion-label>
+          <ion-input type="text" [(ngModel)]="descripcion"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Cuanto ofreces de recompensa?:</ion-label>
+          <ion-input type="text" [(ngModel)]="dinero"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Telefono contacto:</ion-label>
+            <ion-input type="text" [(ngModel)]="contacto"></ion-input>
+          </ion-item>
+
+        <ion-item>
+            <button ion-button color="secondary" (click)="guardarRegistro()">Registrar</button>
+        </ion-item>
+      
+      </ion-list>
+</ion-content>
