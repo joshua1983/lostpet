@@ -10,10 +10,11 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
-import { UsuarioComponent } from '../components/usuario/usuario';
 import { HomePage } from '../pages/home/home';
 import { PerdidoPage } from '../pages/perdido/perdido';
 import { MascotasService } from '../servicios/mascotas.services';
+import { LoginPage } from '../pages/login/login';
+import { RegistrarPage } from '../pages/registrar/registrar';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyC6zxtjlt16qFvkK61BPfHjy7fW8FfEL30",
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     PerdidoPage,
-    UsuarioComponent
+    LoginPage,
+    RegistrarPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     PerdidoPage,
-    UsuarioComponent
+    LoginPage,
+    RegistrarPage
   ],
   providers: [
     StatusBar,

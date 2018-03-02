@@ -3,7 +3,9 @@ import { NavController, ModalController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PerdidoPage } from '../perdido/perdido';
 import { MascotasService } from '../../servicios/mascotas.services';
-import { UsuarioComponent } from '../../components/usuario/usuario';
+import { LoginPage } from '../login/login';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 declare var google: any;
 
@@ -18,15 +20,21 @@ export class HomePage {
   @ViewChild('map') mapRef: ElementRef;
   mapa:any;
   mascotas = [];
+  loginPage = LoginPage;
 
 
   constructor(public navCtrl: NavController, 
               public geolocation:Geolocation,
               public modalCtr:ModalController,
               public alertCtr:AlertController,
-              public mascotasService:MascotasService
+              public mascotasService:MascotasService,
+              public autenticacion:AngularFireAuth
             ) {
       
+  }
+
+  ionviewWillLoad(){
+    this.autenticacion.authState.subscribe(data => console.log(data));
   }
 
   ionViewDidLoad(){
@@ -36,6 +44,11 @@ export class HomePage {
       this.showMap();
     } );
   }
+
+  openLogin(){
+    this.navCtrl.push(this.loginPage);
+  }
+
 
   showMap(){
     this.geolocation.getCurrentPosition().then((position) => {

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { UsuarioComponent } from './usuario/usuario';
 @NgModule({
-	declarations: [UsuarioComponent],
+	declarations: [],
 	imports: [],
-	exports: [UsuarioComponent]
+	exports: []
 })
 export class ComponentsModule {}
