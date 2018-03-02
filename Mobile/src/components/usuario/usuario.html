@@ -1,0 +1,8 @@
+<div *ngIf="afAuth.authState | async as user; else showLogin">
+  <h1>Hola {{ user.displayName }}!</h1>
+  <button (click)="logout()">Salir</button>
+</div>
+<ng-template #showLogin>
+  <p>Entrar.</p>
+  <button (click)="login()">Entrar con Google</button>
+</ng-template>

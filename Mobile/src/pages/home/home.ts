@@ -3,6 +3,7 @@ import { NavController, ModalController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PerdidoPage } from '../perdido/perdido';
 import { MascotasService } from '../../servicios/mascotas.services';
+import { UsuarioComponent } from '../../components/usuario/usuario';
 
 declare var google: any;
 

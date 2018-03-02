@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
+import { UsuarioComponent } from '../components/usuario/usuario';
 import { HomePage } from '../pages/home/home';
 import { PerdidoPage } from '../pages/perdido/perdido';
 import { MascotasService } from '../servicios/mascotas.services';
@@ -26,7 +27,8 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,
-    PerdidoPage
+    PerdidoPage,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    PerdidoPage
+    PerdidoPage,
+    UsuarioComponent
   ],
   providers: [
     StatusBar,
