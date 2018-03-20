@@ -13,26 +13,20 @@ export class AppComponent {
 
   autenticado: boolean = false;
   usuario: Observable<firebase.User>;
-  mascotas = [];
+  
 
-  constructor(public af: AngularFireAuth,
-              public mascotasService:MascotasService){
+  constructor(public af: AngularFireAuth){
     this.af.authState.subscribe( (auth) =>{
       if (auth != null){
         this.usuario = af.authState;
         this.autenticado = true;
       }
     } );
-
-    this.mascotasService.getMascotas().subscribe( mascotasData => {
-      this.mascotas = mascotasData;
-    } );
   }
 
   login(){
     this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then( (resultado) => {
-      console.log("autenticado");
       this.autenticado = true;
     }).catch((error) =>{
       console.log(error);

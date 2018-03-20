@@ -1,0 +1,59 @@
+<br>
+<form action="">
+  <div class="row">
+    <div class="col s2"></div>
+    <div class="col s8">
+      <div class="row">
+        <div class ="input-field col s12" >
+          <input type="text" id="txt-descripcion" name="descripcion" [(ngModel)]="descripcion">
+          <label for="txt-descripcion">Describe a tu mascota</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <input type="number" id="txt-recompensa" name="recompensa" [(ngModel)]="recompensa">
+            <label for="txt-recompensa">Cuanto ofreces de recompensa?</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+              <input type="number" id="txt-telefono" name="telefono" [(ngModel)]="telefono">
+              <label for="txt-telefono">Telefono contacto</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn">Cargar foto...
+            <input type="file"   (change)="detectFiles($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <a class="waves-effect waves-light btn" (click)="publicar()">Publicar</a>
+        </div>
+        <div class="col s6">
+          <div *ngIf="procesando">
+            <div class="preloader-wrapper small  active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s2"></div>
+  </div>
+  
+</form>
