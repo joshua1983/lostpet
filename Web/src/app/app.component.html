@@ -1,8 +1,23 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">LostPet</a>
+    <a href="#" class="brand-logo center">LostPet</a>
+
+    <ul *ngIf="autenticado" id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="sass.html">Reportar</a></li>
+      <li><a href="badges.html">Mensajes</a></li>
+      <li><a href="collapsible.html">Ayuda</a></li>
+    </ul>
+
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li *ngIf="!autenticado" ><a (click)="login()" >Entrar</a></li>
+      <li *ngIf="af.authState | async as user">
+        <div class="chip">
+            <img src="{{user.photoURL}}" alt="">
+            Bienvenido, {{user.displayName}} 
+        </div>
+        
+        
+      </li>
       <li *ngIf="autenticado"><a (click)="logout()" >Salir</a></li>
     </ul>
   </div>
