@@ -13,8 +13,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PerdidoPage } from '../pages/perdido/perdido';
 import { MascotasService } from '../servicios/mascotas.services';
-import { LoginPage } from '../pages/login/login';
 import { RegistrarPage } from '../pages/registrar/registrar';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyC6zxtjlt16qFvkK61BPfHjy7fW8FfEL30",
@@ -29,8 +29,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     PerdidoPage,
-    LoginPage,
-    RegistrarPage
+    RegistrarPage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -44,8 +44,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     PerdidoPage,
-    LoginPage,
-    RegistrarPage
+    RegistrarPage,
+    PerfilPage
   ],
   providers: [
     StatusBar,

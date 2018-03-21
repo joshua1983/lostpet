@@ -1,0 +1,36 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+
+
+  <ion-item>
+    <ion-avatar item-left>
+        <img [src] = "perfilUsuario.photoURL" alt="">
+    </ion-avatar>
+    <h2>{{ perfilUsuario.displayName }}</h2>
+    <h3>{{ perfilUsuario.email }}</h3>
+  </ion-item>
+
+  <ion-list inset>
+    <ion-item *ngFor="let mas of mascotas" >
+      <img [src] = "mas.foto" alt="">
+      <h2>{{ mas.descripcion }}</h2>
+      <h3>{{ mas.dinero }}</h3>
+      <h3>{{ mas.contacto }}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

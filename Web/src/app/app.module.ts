@@ -25,7 +25,8 @@ export const firebaseConfig = {
   apiKey: "AIzaSyC6zxtjlt16qFvkK61BPfHjy7fW8FfEL30",
   authDomain: "mascotas-1497482247269.firebaseapp.com",
   databaseURL: "https://mascotas-1497482247269.firebaseio.com",
-  storageBucket: "mascotas",
+  storageBucket: "mascotas-1497482247269.appspot.com",
+  projectId: "mascotas-1497482247269",
   messagingSenderId: "53105126957"
 };
 

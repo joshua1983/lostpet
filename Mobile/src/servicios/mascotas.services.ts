@@ -12,8 +12,8 @@ export class MascotasService{
             
     }
 
-    public agregarMascota(lat,lng, titulo, recompensa, telefono){
-        let mascotaPerdida = { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono};
+    public agregarMascota(lat,lng, titulo, recompensa, telefono, usuario){
+        let mascotaPerdida = { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono, uid: usuario};
         let bd = this.afDB.database.ref('mascotas');
         let nuevaMascotaPerdida = bd.push();
         nuevaMascotaPerdida.set(mascotaPerdida);
@@ -24,5 +24,11 @@ export class MascotasService{
         
         return this.afDB.list('mascotas/').valueChanges();
         
+    }
+
+    public getMascotasByUserID(id:any){
+        return this.afDB.list('mascotas/', ref => 
+            ref.equalTo(id)
+        );
     }
 }

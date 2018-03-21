@@ -1,16 +1,22 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
+  <ion-navbar color="primary"  align-title="center">
+    <ion-title >
       LostPet
     </ion-title>
-    <ion-buttons>
+    <ion-buttons *ngIf="autenticado">
       <button ion-button (click)="agregarDesaparecido()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button  (click)="openLogin()" >
+      <button *ngIf="!autenticado" ion-button  (click)="openLogin()" >
           <ion-icon name="person"></ion-icon>
+      </button>
+      <button ion-button icon-only *ngIf="autenticado" (click)="loadPerfil()">
+        <img [src] = "userProfile.photoURL" height="40px" width="40px" class="img-circulo" alt="">
+      </button>
+      <button *ngIf="autenticado" ion-button  (click)="salir()" >
+        <ion-icon name="exit"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

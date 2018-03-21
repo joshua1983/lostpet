@@ -19,10 +19,12 @@ export class PerdidoPage {
   descripcion:string;
   dinero:number;
   contacto:number;
+  userProfile:any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController) {
+      this.userProfile = navParams.get("perfilUsuario");
       this.lat = navParams.get("latitud");
       this.lng = navParams.get("longitud");
   }
@@ -37,7 +39,8 @@ export class PerdidoPage {
       dinero: this.dinero,
       latitud: this.lat,
       longitud: this.lng,
-      contacto: this.contacto
+      contacto: this.contacto,
+      uid: this.userProfile.uid
     }
     this.viewCtrl.dismiss(data);
   }

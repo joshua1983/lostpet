@@ -24,7 +24,8 @@ export class MascotasService{
         this.uploadTask = storageRef.child(`${this.pathBase}/${upload.file.name}`).put(upload.file);
         this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
             (snapshot) => {
-                //upload.progress = (snapshot.byteTransferred / snapshot.totalBytes) / 100;
+                const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+                upload.progress = (snap.bytesTransferred / snap.totalBytes) * 100;
             },
             (error) => {
                 console.log(error);
