@@ -29,6 +29,6 @@ export class MascotasService{
     public getMascotasByUserID(id:any){
         return this.afDB.list('mascotas/', ref => 
             ref.equalTo(id)
-        );
+        ).valueChanges();
     }
 }

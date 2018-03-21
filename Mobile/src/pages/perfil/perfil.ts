@@ -27,11 +27,14 @@ export class PerfilPage {
   }
 
   ionViewDidLoad() {
-    
+    this.loadMascotasUsuarios();
   }
 
   loadMascotasUsuarios(){
-    //this.mascotas =  this.mascotasService.getMascotasByUserID(this.perfilUsuario.uid);
+    this.mascotasService.getMascotasByUserID(this.perfilUsuario.uid).subscribe(mascotasData => {
+      console.log(mascotasData);
+      this.mascotas = mascotasData;
+    });
   }
 
 }
