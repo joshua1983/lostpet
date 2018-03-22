@@ -9,7 +9,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 
 const APP_RUTAS: Routes = [
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
-    { path: 'reportar', component: ReportarComponent },
+    { path: 'reportar/:uid', component: ReportarComponent },
     { path: 'inicio', component:  InicioComponent},
     { path: 'mensajes', component: MensajesComponent },
     { path: 'ayuda', component: AyudaComponent }

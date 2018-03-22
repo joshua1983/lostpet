@@ -30,7 +30,6 @@ export class PerdidoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PerdidoPage');
   }
 
   guardarRegistro(){

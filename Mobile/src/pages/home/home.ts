@@ -51,7 +51,6 @@ export class HomePage {
   async openLogin(){
     try{
       const result = await this.autenticacion.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-      console.log(result);
       this.userProfile = result.user;
       this.autenticado = true;
     }catch(e){

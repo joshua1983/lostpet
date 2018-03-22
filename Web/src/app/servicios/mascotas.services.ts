@@ -18,7 +18,7 @@ export class MascotasService{
             
     }
 
-    public agregarMascota(lat,lng, titulo, recompensa, telefono, upload:Upload){
+    public agregarMascota(lat,lng, titulo, recompensa, telefono, upload:Upload, user){
 
         let storageRef = firebase.storage().ref();
         this.uploadTask = storageRef.child(`${this.pathBase}/${upload.file.name}`).put(upload.file);
@@ -34,7 +34,7 @@ export class MascotasService{
                 upload.url = this.uploadTask.snapshot.downloadURL;
                 upload.name = upload.file.name;
 
-                let mascotaPerdida = { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono, foto: upload.url};
+                let mascotaPerdida = { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono, foto: upload.url, uid:user};
                 let bd = this.afDB.database.ref('mascotas');
                 let nuevaMascotaPerdida = bd.push();
                 nuevaMascotaPerdida.set(mascotaPerdida);

@@ -8,7 +8,6 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { MaterializeModule } from 'angular2-materialize';
 import { MapaComponent } from './mapa/mapa.component';
@@ -34,7 +33,6 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     RegistroComponent,
     MapaComponent,
     ReportarComponent,

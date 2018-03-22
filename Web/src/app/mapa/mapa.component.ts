@@ -18,7 +18,6 @@ export class MapaComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    console.log(this.mascotas);
     if (navigator.geolocation){
       navigator.geolocation.getCurrentPosition( (position) => {
         this.lat = position.coords.latitude;

@@ -26,11 +26,11 @@
   </ion-item>
 
   <ion-list inset>
-    <ion-item *ngFor="let mas of mascotas" >
-      <img [src] = "mas.foto" alt="">
-      <h2>{{ mas.descripcion }}</h2>
-      <h3>{{ mas.dinero }}</h3>
-      <h3>{{ mas.contacto }}</h3>
+    <ion-item *ngFor="let mascota of mascotas" >
+      <img [src] = "mascota.foto" alt="">
+      <h2>{{ mascota.descripcion }}</h2>
+      <h3>{{ mascota.dinero }}</h3>
+      <h3>{{ mascota.contacto }}</h3>
     </ion-item>
   </ion-list>
 </ion-content>

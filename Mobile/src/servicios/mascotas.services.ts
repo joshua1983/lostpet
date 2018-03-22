@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MascotasService{
-    mascotas: Observable<any[]>;
+    mascotas = [];
     
 
     constructor(public afDB: AngularFireDatabase) {
@@ -13,7 +11,7 @@ export class MascotasService{
     }
 
     public agregarMascota(lat,lng, titulo, recompensa, telefono, usuario){
-        let mascotaPerdida = { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono, uid: usuario};
+        let mascotaPerdida =  { lat: lat, lng: lng, descripcion: titulo, dinero: recompensa, contacto: telefono, uid: usuario};
         let bd = this.afDB.database.ref('mascotas');
         let nuevaMascotaPerdida = bd.push();
         nuevaMascotaPerdida.set(mascotaPerdida);
@@ -26,9 +24,8 @@ export class MascotasService{
         
     }
 
-    public getMascotasByUserID(id:any){
-        return this.afDB.list('mascotas/', ref => 
-            ref.equalTo(id)
-        ).valueChanges();
+    public getMascotasByUserID(id:string){
+        
+        return this.afDB.list('mascotas/', ref => ref.equalTo(""+id+"")).valueChanges();
     }
 }

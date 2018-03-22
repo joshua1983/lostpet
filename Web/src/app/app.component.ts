@@ -12,13 +12,13 @@ import { MascotasService } from './servicios/mascotas.services';
 export class AppComponent {
 
   autenticado: boolean = false;
-  usuario: Observable<firebase.User>;
+  usuario: any;
   
 
   constructor(public af: AngularFireAuth){
     this.af.authState.subscribe( (auth) =>{
       if (auth != null){
-        this.usuario = af.authState;
+        this.usuario = auth;
         this.autenticado = true;
       }
     } );

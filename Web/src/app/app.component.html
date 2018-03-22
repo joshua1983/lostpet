@@ -4,7 +4,7 @@
 
     <ul *ngIf="autenticado" id="nav-mobile" class="left hide-on-med-and-down">
       <li><a [routerLink] = "['/inicio']">Inicio</a></li>
-      <li><a [routerLink] = "['/reportar']">Reportar</a></li>
+      <li><a [routerLink] = "['/reportar', usuario.uid]">Reportar</a></li>
       <li><a [routerLink] = "['/mensajes']">Mensajes</a></li>
       <li><a [routerLink] = "['/ayuda']">Ayuda</a></li>
     </ul>
